@@ -1,0 +1,46 @@
+{# @CeradTeam/Team/Register/TeamRegisterForm.html.twig #}
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<table border="1" style="width: 600px;">
+    
+<tr><th colspan="2">Camp Information</th></tr>
+<tr><td style="width: 35%;">Futsal Player Camp Date <span style='color:red'>*</span></td>
+    <td style="width: 65%;">{{ form_widget(form.camper.project)  }}</td></tr>
+<tr><th colspan="2">Camper Information</th></tr>
+<tr><td>First Name<span style='color:red'>*</span> & Last Name <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.nameFirstCamper) }}{{ form_widget(form.camper.nameLastCamper) }}</td></tr>
+<tr><td>Middle Initial </td><td>{{ form_widget(form.camper.initialCamper)  }}</td></tr>
+<tr><td>Gender <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.gender)    }}</td></tr>
+
+<tr><td>Street <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.street)  }}</td></tr>
+<tr><td>City<span style='color:red'>*</span>, State<span style='color:red'>*</span> & Zip Code <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.city) }}{{ form_widget(form.camper.state) }}{{ form_widget(form.camper.zipCode) }}</td></tr>
+
+<tr><td>Camper's Phone <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.phoneCamper)    }}</td></tr>
+<tr><td>Birth Date <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.dob)       }}</td></tr>
+
+<tr><td>Jersey Number </td><td>{{ form_widget(form.camper.jerseyNumber)       }}</td></tr>
+<tr><td>Indoor Experience? <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.indoorExperience)       }}</td></tr>
+<tr><td>Outdoor Experience? <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.outdoorExperience)       }}</td></tr>
+<tr><td>Shirt Size </td><td>{{ form_widget(form.camper.shirtSize)       }}</td></tr>
+
+<tr><td>Email <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.emailAddress.email1) }}</td></tr>
+<tr><td>Email (confirm) <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.emailAddress.email2) }}</td></tr>
+
+<tr><th colspan="2">Parent/Guardian Information</th></tr>
+<tr><td>First Name<span style='color:red'>*</span> & Last&nbspName <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.nameFirstParent) }}{{ form_widget(form.camper.nameLastParent) }}</td></tr>
+<tr><td>Phone </td><td>{{ form_widget(form.camper.phoneParent)     }}</td></tr>
+<tr><td>Relationship <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.relationship)  }}</td></tr>
+
+<tr><th colspan="2">Emergency Contact Information</th></tr>
+<tr><td>Medical Conditions </td><td>{{ form_widget(form.camper.medicalConditions)   }}</td></tr>
+<tr><td>Doctor's Name & Phone # </td><td>{{ form_widget(form.camper.nameDoctor) }}{{ form_widget(form.camper.phoneDoctor) }}</td></tr>
+<tr><td>Emergency Contact Name&nbsp<span style='color:red'>*</span></td><td>{{ form_widget(form.camper.nameEmergencyContact)}}</td></tr>
+<tr><td>Emergency Contact's Phone <span style='color:red'>*</span></td><td>{{ form_widget(form.camper.phoneEmergencyContact) }}</td></tr>
+
+<tr><th colspan="2">List below any interests in volunteering</th></tr>
+<tr><td>Interests</td><td>{{ form_widget(form.camper.volunteerism) }}</td></tr>
+
+<tr><td><span style='color:red'>*</span> Required Fields</td><td align="center">{{ form_widget(form.register) }}</td></tr>
+</table>
+
+{{ form_rest(form)  }}
+{{ form_end(form)   }}

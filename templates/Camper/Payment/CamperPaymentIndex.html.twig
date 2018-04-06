@@ -1,0 +1,45 @@
+{# @CeradTeam/Camper/Register/camperRegisterIndex.html.twig #}
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<style>
+/*.paypal-button button::after { content: "**"; }*/
+  .button::after { content: "**"; }
+</style>
+ 
+<h3 style="margin: 0px;">Step 2 - Confirm Information</h3>
+<table border="1">
+{% set campDate = camper.project|slice(14)|date("F d, Y") %}
+<tr><td>Camp Date</td><td>{{ campDate }}</td></tr>
+<tr><td>Camper Name</td><td>{{ camper.nameLastCamper }}, {{ camper.nameFirstCamper }} {{ camper.initialCamper }}</td></tr>
+<tr><td>Email</td><td>{{ camper.emailAddress }}</td></tr>
+<tr><td colspan="2"></td></tr>
+<tr><td>Base Amount</td><td>{{ fee }}</td></tr>
+<tr><td>Debit/Credit Card Usage Fee</td><td>{{ upLift }}</td></tr>
+<tr><td>Total Amount*</td><td>{{ total }}</td></tr>
+<tr><td colspan="2"><a href="{{ path('cerad_camper_register', { 'id': camper.id }) }}">Change Camper Information</a></td></tr>
+</table>
+<br />
+<script 
+    data-tax="0" 
+    data-shipping="0" 
+    data-amount="{{ total }}"
+    data-quantity="1" 
+    data-name="Camper Registration {{ campDate ~ ' ' ~ camper.nameLastCamper ~ ', ' ~ camper.nameFirstCamper }} {{ camper.initialCamper }}"
+    data-button="buynow" 
+    data-custom="My custom information"
+    data-return="http://www.nafutsal.org/index_files/Page357.htm"
+    src="/js/paypal-button.min.js?merchant=KDTT4D89UN6DN"
+></script>
+<p style="width: 400px; font-size: 80%">
+* NOTE: 
+The above Total Amount includes the debit/credit card usage fee. After you click  
+Buy Now and complete the payment, the debit/credit card usage fee of ${{ upLift }} <strong>is not refundable</strong>.
+</p>
+<p style="width: 400px; font-size: 80%">
+** NOTE:
+By clicking <strong>Buy Now</strong> you agree to the North Alabama <em>FUTSAL’s</em> 
+<a href="http://www.nafutsal.org/registration/NAFUTSAL_Terms.pdf" target="_blank">
+Terms and Conditions</a> for participation in North Alabama <em>FUTSAL</em> activities.
+</p>
+{% endblock %}

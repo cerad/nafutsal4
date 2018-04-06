@@ -1,3 +1,17 @@
 index:
     path: /
     controller: App\Controller\IndexController::index
+
+cerad_camper_register:
+    path:  /camper/register/{id}
+    defaults:
+        id: 0
+        _controller: App\Controller\CamperRegisterController::register
+        _template: 'Camper/Register/CamperRegisterIndex.html.twig'
+
+cerad_camper_payment:
+    path:  /camper/payment/{id}
+    defaults:
+        id: 0
+        _controller: App\Controller\CamperPaymentController::payment
+        _template: 'Camper/Payment/CamperPaymentIndex.html.twig'

@@ -13,7 +13,10 @@ class CamperRepository extends ServiceEntityRepository
         parent::__construct($registry,Camper::class);
 
     }
-
+    public function createCamper()
+    {
+        return new Camper();
+    }
     /* ==========================================================
      * Persistence
      */
