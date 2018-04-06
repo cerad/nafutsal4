@@ -1,0 +1,52 @@
+{# @CeradTeam/Player/List/playerRegisterIndex.html.twig #}
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+ 
+<h3 style="margin: 0px;">Player Pool</h3>
+{{ form_start(form) }}
+{{ form_label(form.showAll) }}{{ form_widget(form.showAll) }}
+{{ form_widget(form.updateButton) }}
+{{ form_rest(form) }}
+{{ form_end(form) }}
+<table border="1" style="width: 610px;">
+  <thead>
+    <tr><th colspan="20">Player Count: {{ players | length }}</th></tr>
+    <tr><th>Player Status</th>
+        <th>Player First Name</th>
+        <th>Player Last Name</th>
+        <th>Gender</th>
+        <th>Phone Number</th>
+        <th>Age</th>
+        <th>Futsal Exp?</th>
+        <th>Soccer Exp?</th>
+        <th>Email Address</th>
+        <th>Parent First Name</th>
+        <th>Parent Last Name</th>
+        <th>Parent Phone Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for player in players %}
+        <tr>
+            <td style="width: 10%;">{{ player.status }}</td>
+            <td style="width: 10%;">{{ player.nameFirstPlayer }}</td>
+            <td style="width: 10%;">{{ player.nameLastPlayer }}</td>
+            <td style="width: 10%;" align="center">{{ player.gender }}</td>
+            <td style="width: 10%;">{{ player.phonePlayer | cerad_phone }}</td>
+            <td style="width: 10%;">{{ player.dob | cerad_age }}</td>
+            <td style="width: 10%;">{{ player.indoorExperience }}</td>
+            <td style="width: 10%;">{{ player.outdoorExperience }}</td>
+            <td style="width: 10%;">{{ player.emailAddress | cerad_email }}</td>
+            <td style="width: 10%;">{{ player.nameFirstParent }}</td>
+            <td style="width: 10%;">{{ player.nameLastParent }}</td>
+            <td style="width: 10%;">{{ player.phoneParent | cerad_phone }}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<br />
+<p style="width: 600px; font-size: 80%">
+NOTE: When a player is "picked up" by a team, Player Status will be displayed as "Joined".
+</p>
+{% endblock %}

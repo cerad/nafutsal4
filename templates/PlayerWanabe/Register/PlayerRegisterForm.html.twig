@@ -1,0 +1,47 @@
+{# @CeradTeam/Team/Register/TeamRegisterForm.html.twig #}
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<table border="1" style="width: 610px;">
+    
+<tr><th colspan="2">Season Information</th></tr>
+    <tr><td style="width: 40%;">Season Desired <span style='color:red'>*</span></td>
+        <td style="width: 60%;">{{ form_widget(form.player.seasonDesired)  }}</td></tr>
+<tr><th colspan="2">Pool Player Information</th></tr>
+<tr><td>First Name<span style='color:red'>*</span> & Last Name <span style='color:red'>*</span></td><td>{{ form_widget(form.player.nameFirstPlayer) }}{{ form_widget(form.player.nameLastPlayer)  }}</td></tr>
+<tr><td>Middle Initial </td><td>{{ form_widget(form.player.initialPlayer)  }}</td></tr>
+<tr><td>Gender <span style='color:red'>*</span></td><td>{{ form_widget(form.player.gender)    }}</td></tr>
+
+<tr><td>Street   </td><td>{{ form_widget(form.player.street)  }}</td></tr>
+<tr><td>City, State & Zip Code </td><td>{{ form_widget(form.player.city) }}{{ form_widget(form.player.state) }}{{ form_widget(form.player.zipCode) }}</td></tr>
+
+<tr><td>Player's Phone&nbsp<span style='color:red'>*</span></td><td>{{ form_widget(form.player.phonePlayer)    }}</td></tr>
+<tr><td>Birth Date <span style='color:red'>**</span></td><td>{{ form_widget(form.player.dob)       }}</td></tr>
+
+<tr><td>Jersey Number </td><td>{{ form_widget(form.player.jerseyNumber)       }}</td></tr>
+<tr><td>Indoor Experience? <span style='color:red'>**</span></td><td>{{ form_widget(form.player.indoorExperience) }}</td></tr>
+<tr><td>Outdoor Experience? <span style='color:red'>**</span></td><td>{{ form_widget(form.player.outdoorExperience)}}</td></tr>
+<tr><td>Shirt Size </td><td>{{ form_widget(form.player.shirtSize)       }}</td></tr>
+
+<tr><td>Email <span style='color:red'>*</span></td><td>{{ form_widget(form.player.emailAddress.email1) }}</td></tr>
+<tr><td>Email (confirm) <span style='color:red'>*</span></td><td>{{ form_widget(form.player.emailAddress.email2) }}</td></tr>
+
+<tr><th colspan="2">Parent/Guardian Information</th></tr>
+<tr><td>First Name<span style='color:red'>**</span> & Last Name <span style='color:red'>**</span></td><td>{{ form_widget(form.player.nameFirstParent) }}{{ form_widget(form.player.nameLastParent) }}</td></tr>
+<tr><td>Phone <span style='color:red'>**</span></td><td>{{ form_widget(form.player.phoneParent)     }}</td></tr>
+<tr><td>Relationship <span style='color:red'>**</span></td><td>{{ form_widget(form.player.relationship)  }}</td></tr>
+
+<tr><th colspan="2">Emergency Contact Information</th></tr>
+<tr><td>Medical Conditions </td><td>{{ form_widget(form.player.medicalConditions)   }}</td></tr>
+<tr><td>Doctor's Name & Phone # </td><td>{{ form_widget(form.player.nameDoctor) }}{{ form_widget(form.player.phoneDoctor) }}</td></tr>
+<tr><td>Emergency Contact Name </td><td>{{ form_widget(form.player.nameEmergencyContact)}}</td></tr>
+<tr><td>Emergency Contact's Phone </td><td>{{ form_widget(form.player.phoneEmergencyContact) }}</td></tr>
+
+<tr><th colspan="2">List below any interests in volunteering</th></tr>
+<tr><td>Interests</td><td>{{ form_widget(form.player.volunteerism) }}</td></tr>
+
+<tr><td><span style='color:red'>*</span> Required Fields<br />for all players.</td><td><span style='color:red'>**</span> Required Fields<br />for youth players only.</td></tr>
+<tr><td>(Additional fields become required when added to a team.)</td><td align="center">{{ form_widget(form.register) }}</td></tr>
+</table>
+
+{{ form_rest(form)  }}
+{{ form_end(form)   }}

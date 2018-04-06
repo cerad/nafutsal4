@@ -29,3 +29,23 @@ cerad_player_payment:
         id: 0
         _controller: App\Controller\PlayerPaymentController::payment
         _template: 'Player/Payment/PlayerPaymentIndex.html.twig'
+
+cerad_player_wanabe_register:
+    path:  /player-request/register/{id}
+    defaults:
+        id: 0
+        _controller: App\Controller\PlayerWanabeRegisterController::register
+        _template: 'PlayerWanabe/Register/PlayerRegisterIndex.html.twig'
+
+cerad_player_wanabe_confirm:
+    path:  /player-confirmation/register/{id}
+    defaults:
+        id: 0
+        _controller: App\Controller\PlayerWanabeConfirmController::confirm
+        _template: 'PlayerWanabe/Register/PlayerConfirmIndex.html.twig'
+
+cerad_player_wanabe_list:
+    path:  /player-request/list
+    defaults:
+        _controller: App\Controller\PlayerWanabeListController::list
+        _template: 'PlayerWanabe/List/PlayerListIndex.html.twig'

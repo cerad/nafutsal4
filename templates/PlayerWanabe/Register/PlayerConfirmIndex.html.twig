@@ -1,0 +1,20 @@
+{# @CeradTeam/Player/Register/playerRegisterIndex.html.twig #}
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+ 
+<h3 style="margin: 0px;">Player Information Submitted</h3>
+<table border="1">
+<tr><td>Season Desired</td><td>{{ player.seasonDesired }}</td></tr>
+<tr><td>Player Name</td><td>{{ player.nameLastPlayer }}, {{ player.nameFirstPlayer }} {{ player.initialPlayer }}</td></tr>
+<tr><td>Phone Number</td><td>{{ player.phonePlayer | cerad_phone }}</td></tr>
+<tr><td>Email</td><td>{{ player.emailAddress }}</td></tr>
+<tr><td>Status</td><td>{{ player.status }}</td></tr>
+<tr><td colspan="2"><a href="{{ path('cerad_player_wanabe_register', { 'id': player.id }) }}">Change Player Information</a></td></tr>
+<tr><td colspan="2"><a href="{{ path('cerad_player_wanabe_register') }}">Submit Another Player</a></td></tr>
+</table>
+<br />
+<p style="width: 280px; font-size: 80%">
+NOTE: When a player is "picked up" by a team, Status will be changed to "Joined".
+</p>
+{% endblock %}
