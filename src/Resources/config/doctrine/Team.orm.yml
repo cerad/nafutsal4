@@ -1,0 +1,138 @@
+Cerad\Bundle\TeamBundle\Entity\Team:
+    type:  entity
+    table: teams
+    repositoryClass: Cerad\Bundle\TeamBundle\Entity\TeamRepository
+    changeTrackingPolicy: NOTIFY
+
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    
+    fields:
+       
+        project:
+            column:   project
+            type:     string
+            length:   80
+            nullable: false
+            
+        teamName:
+            column:   team_name
+            type:     string
+            length:   80
+            nullable: false
+            
+        teamAge:
+            column:   team_age
+            type:     string
+            length:   20
+            nullable: true
+            
+        teamGender:
+            column:   team_gender
+            type:     string
+            length:   20
+            nullable: true
+            
+        teamColor:
+            column:   team_color
+            type:     string
+            length:   80
+            nullable: true
+            
+        nameFirst:
+            column:   name_first
+            type:     string
+            length:   80
+            nullable: true
+            
+        nameLast:
+            column:   name_last
+            type:     string
+            length:   80
+            nullable: true
+            
+        dob:
+            column:   dob
+            type:     date
+            nullable: true
+            
+        gender:
+            column:   gender
+            type:     string
+            length:   8
+            nullable: true
+            
+        email:
+            column:   email
+            type:     string
+            length:   80
+            nullable: true
+            
+        phoneHome:
+            column:   phone_home
+            type:     string
+            length:   20
+            nullable: true
+            
+        phoneCell:
+            column:   phone_cell
+            type:     string
+            length:   20
+            nullable: true
+            
+        phoneWork:
+            column:   phone_work
+            type:     string
+            length:   20
+            nullable: true
+            
+        street:
+            column:   street
+            type:     string
+            length:   80
+            nullable: true
+                        
+        city:
+            column:   city
+            type:     string
+            length:   80
+            nullable: true
+                        
+        state:
+            column:   state
+            type:     string
+            length:   20
+            nullable: true
+                        
+        zipCode:
+            column:   zip_code
+            type:     string
+            length:   20
+            nullable: true
+                        
+        fee:
+            column:   fee
+            type:     string
+            length:   20
+            nullable: true
+            
+        feeStatus:
+            column:   fee_status
+            type:     string
+            length:   20
+            nullable: true
+            
+        status:
+            column:   status
+            type:     string
+            length:   20
+            nullable: false
+            
+        learn:
+            column:   learn
+            type:     text
+            nullable: true
+            
+            

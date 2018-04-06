@@ -1,0 +1,195 @@
+Cerad\Bundle\PlayerWanabeBundle\Entity\Player:
+    type:  entity
+    table: player_wanabes
+    repositoryClass: Cerad\Bundle\PlayerWanabeBundle\Entity\PlayerRepository
+
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    
+    fields:
+       
+        # season
+        seasonDesired:
+            column:   season_desired
+            type:     string
+            length:   80
+            nullable: false
+            
+        project:
+            column:   project
+            type:     string
+            length:   80
+            nullable: false
+
+        # Player
+        nameFirstPlayer:
+            column:   name_first_player
+            type:     string
+            length:   80
+            nullable: false
+            
+        initialPlayer:
+            column:   initial_player
+            type:     string
+            length:   3
+            nullable: true
+            
+        nameLastPlayer:
+            column:   name_last_player
+            type:     string
+            length:   80
+            nullable: false
+            
+        gender:
+            column:   gender
+            type:     string
+            length:   8
+            nullable: false
+            
+        dob:
+            column:   dob
+            type:     date
+            nullable: true
+
+        # ADDRESS
+        street:
+            column:   street
+            type:     string
+            length:   80
+            nullable: true
+                        
+        city:
+            column:   city
+            type:     string
+            length:   80
+            nullable: true
+                        
+        state:
+            column:   state
+            type:     string
+            length:   20
+            nullable: true
+                        
+        zipCode:
+            column:   zip_code
+            type:     string
+            length:   20
+            nullable: true
+                        
+        # PHONE NUMBERS
+        phonePlayer:
+            column:   phone_player
+            type:     string
+            length:   20
+            nullable: false
+            
+        phoneParent:
+            column:   phone_parent
+            type:     string
+            length:   20
+            nullable: true
+            
+        phoneDoctor:
+            column:   phone_doctor
+            type:     string
+            length:   20
+            nullable: true
+            
+        phoneEmergencyContact:
+            column:   phone_emergency_contact
+            type:     string
+            length:   20
+            nullable: true
+
+        # EXPERIENCE
+        indoorExperience:
+            column:   indoor_experience
+            type:     string
+            length:   10
+            nullable: true
+            # The above field is required for youth players only
+            
+        outdoorExperience:
+            column:   outdoor_experience
+            type:     string
+            length:   10
+            nullable: true
+            # The above field is required for youth players only
+        
+        #MORE THIS UP ??????????????
+        jerseyNumber:
+            column:   jersey_number
+            type:     integer
+            nullable: true
+            # The above field once was required for youth players
+
+        # PLAYER'S SHIRT SIZE
+        shirtSize:
+            column:   shirt_size
+            type:     string
+            length:   40
+            nullable: true
+        
+        # PLAYER'S EMAIL ADDRESS
+        emailAddress:
+            column:   email_address
+            type:     string
+            length:   80
+            nullable: false
+
+        # PARENT OR GUARDIAN
+        nameFirstParent:
+            column:   name_first_parent
+            type:     string
+            length:   80
+            nullable: true
+            # The above field is required for youth players only
+            
+        nameLastParent:
+            column:   name_last_parent
+            type:     string
+            length:   80
+            nullable: true
+            # The above field is required for youth players only
+            
+        relationship:
+            column:   relationship
+            type:     string
+            length:   80
+            nullable: true
+            # The above field is required for youth players only
+
+        # MEDICAL
+        medicalConditions:
+            column:   medical_conditions
+            type:     string
+            length:   80
+            nullable: true
+            
+        nameDoctor:
+            column:   name_doctor
+            type:     string
+            length:   80
+            nullable: true
+            
+        nameEmergencyContact:
+            column:   name_emergency_contact
+            type:     string
+            length:   80
+            nullable: true
+
+        # VOLUNTEER
+        volunteerism:
+            column:   volunteerism
+            type:     text
+            nullable: true
+            
+        status:
+            column:   status
+            type:     string
+            length:   20
+            nullable: false
+                        
+            
