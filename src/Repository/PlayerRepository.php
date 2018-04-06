@@ -13,7 +13,10 @@ class PlayerRepository extends ServiceEntityRepository
         parent::__construct($registry,Player::class);
 
     }
-
+    public function createPlayer()
+    {
+        return new Player();
+    }
     /* ==========================================================
      * Persistence
      */

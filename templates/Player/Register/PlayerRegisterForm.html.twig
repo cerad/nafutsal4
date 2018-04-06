@@ -1,0 +1,56 @@
+{# @CeradTeam/Team/Register/TeamRegisterForm.html.twig #}
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<table border="1" style="width: 600px;">
+    
+<tr><td style="width: 35%;">Season Desired <span style='color:red'>*</span></td>
+    <td style="width: 65%;">{{ form_widget(form.player.project)  }}</td></tr>
+<tr><th colspan="2">House Player Information</th></tr>
+<tr><td>First Name <span style='color:red'>*</span></td><td>{{ form_widget(form.player.nameFirstPlayer) }}</td></tr>
+<tr><td>Initial </td><td>{{ form_widget(form.player.initialPlayer)  }}</td></tr>
+<tr><td>Last Name <span style='color:red'>*</span></td><td>{{ form_widget(form.player.nameLastPlayer)  }}</td></tr>
+<tr><td>Gender <span style='color:red'>*</span></td><td>{{ form_widget(form.player.gender)    }}</td></tr>
+
+<tr><td>Street <span style='color:red'>*</span></td><td>{{ form_widget(form.player.street)  }}</td></tr>
+<tr><td>City <span style='color:red'>*</span></td><td>{{ form_widget(form.player.city)    }}</td></tr>
+<tr><td>State <span style='color:red'>*</span></td><td>{{ form_widget(form.player.state)   }}</td></tr>
+<tr><td>Zip Code <span style='color:red'>*</span></td><td>{{ form_widget(form.player.zipCode) }}</td></tr>
+
+<tr><td>Player's Phone <span style='color:red'>*</span></td><td>{{ form_widget(form.player.phonePlayer)    }}</td></tr>
+<tr><td>Birth Date <span style='color:red'>*</span></td><td>{{ form_widget(form.player.dob)       }}</td></tr>
+
+<tr><td>Jersey Number </td><td>{{ form_widget(form.player.jerseyNumber)       }}</td></tr>
+<tr><td>Indoor Experience? <span style='color:red'>*</span></td><td>{{ form_widget(form.player.indoorExperience)       }}</td></tr>
+<tr><td>Outdoor Experience? <span style='color:red'>*</span></td><td>{{ form_widget(form.player.outdoorExperience)       }}</td></tr>
+<tr><td>Shirt Size </td><td>{{ form_widget(form.player.shirtSize)       }}</td></tr>
+
+<tr><td>Email <span style='color:red'>*</span></td><td>{{ form_widget(form.player.emailAddress.email1) }}</td></tr>
+<tr><td>Email (confirm) <span style='color:red'>*</span></td><td>{{ form_widget(form.player.emailAddress.email2) }}</td></tr>
+
+{# comment #}
+{# <tr><td>Paid USFF Fee? </td><td>{{ form_widget(form.player.paidAnnualUSFFplayerFee) }} No - see note immediately below </td></tr> #}
+{# <tr><td colspan="2"><font size="2"><center>Check the box above ONLY if you have previously paid the Annual USFF Player Registration Fee for the current fiscal year (August 1 thru July 31), which is normally $21.00 per adult player. If you have not previously paid this fee, $10 will be added to your House Team Registration cost for this purpose (increases to $21 after Apr 30 or if not paid online). You MUST pay the USFF Player Registration Fee before you may play on the House Team.</center></font></td></tr> #}
+   <tr><td>Paid USFF Fee? </td><td>{{ form_widget(form.player.paidAnnualUSFFplayerFee) }} All must pay this fee annually. See note immediately below.</td></tr>
+   <tr><td colspan="2"><font size="2"><center>Checking this box is irrelevant in the fall. You MUST pay the USFF Player Registration Fee before you may play on the House Team in the upcoming winter season.</center></font></td></tr>
+
+<tr><th colspan="2">Parent/Guardian Information (youth players only)</th></tr>
+<tr><td>First Name </td><td>{{ form_widget(form.player.nameFirstParent) }}</td></tr>
+<tr><td>Last Name </td><td>{{ form_widget(form.player.nameLastParent)  }}</td></tr>
+<tr><td>Phone </td><td>{{ form_widget(form.player.phoneParent)     }}</td></tr>
+<tr><td>Relationship </td><td>{{ form_widget(form.player.relationship)  }}</td></tr>
+
+<tr><th colspan="2">Emergency Contact Information</th></tr>
+<tr><td>Medical Conditions </td><td>{{ form_widget(form.player.medicalConditions)   }}</td></tr>
+<tr><td>Doctor's Name      </td><td>{{ form_widget(form.player.nameDoctor)          }}</td></tr>
+<tr><td>Doctor's Phone     </td><td>{{ form_widget(form.player.phoneDoctor)         }}</td></tr>
+<tr><td>Emergency Contact Name&nbsp<span style='color:red'>*</span></td><td>{{ form_widget(form.player.nameEmergencyContact)}}</td></tr>
+<tr><td>Emergency Contact's Phone <span style='color:red'>*</span></td><td>{{ form_widget(form.player.phoneEmergencyContact) }}</td></tr>
+
+<tr><th colspan="2">List below any interests in volunteering</th></tr>
+<tr><td>Interests</td><td>{{ form_widget(form.player.volunteerism) }}</td></tr>
+
+<tr><td><span style='color:red'>*</span> Required Fields</td><td align="center">{{ form_widget(form.register) }}</td></tr>
+</table>
+
+{{ form_rest(form)  }}
+{{ form_end(form)   }}

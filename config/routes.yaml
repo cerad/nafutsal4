@@ -15,3 +15,17 @@ cerad_camper_payment:
         id: 0
         _controller: App\Controller\CamperPaymentController::payment
         _template: 'Camper/Payment/CamperPaymentIndex.html.twig'
+
+cerad_player_register:
+    path:  /player/register/{id}
+    defaults:
+        id: 0
+        _controller: App\Controller\PlayerRegisterController::register
+        _template: 'Player/Register/PlayerRegisterIndex.html.twig'
+
+cerad_player_payment:
+    path:  /player/payment/{id}
+    defaults:
+        id: 0
+        _controller: App\Controller\PlayerPaymentController::payment
+        _template: 'Player/Payment/PlayerPaymentIndex.html.twig'

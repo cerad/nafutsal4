@@ -1,18 +1,19 @@
 <?php
 namespace App\Controller;
 
-use App\Repository\CamperRepository;
+use App\Repository\PlayerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
-class CamperPaymentController extends AbstractController
+class PlayerPaymentController extends AbstractController
 {
-    private $camperRepository;
+    private $playerRepository;
 
-    public function __construct(CamperRepository $camperRepository)
+    public function __construct(PlayerRepository $playerRepository)
     {
-        $this->camperRepository = $camperRepository;
+        $this->playerRepository = $playerRepository;
     }
+
     public function payment(Request $request)
     {
         // The model
@@ -27,47 +28,45 @@ class CamperPaymentController extends AbstractController
     protected function createModel(Request $request)
     {
         $model = array();
+
+        $playerId = $request->get('id');
+        $player   = $this->playerRepository->find($playerId);
         
-        $camperRepo = $this->camperRepository;
-        
-        $camperId = $request->get('id');
-        $camper   = $camperRepo->find($camperId);
-        
-        if (!$camper)
+        if (!$player)
         {
-            $model['response'] = $this->redirectToRoute('cerad_camper_register');
+            $model['response'] = $this->redirectToRoute('cerad_player_register');
             return $model;
         }
         
         // Check if already paid
-        $fee = $camper->getFee();
-        $upLift = ((float)$fee * 0.030999);
-        $total = $upLift + (float)$fee;
+        $fee = $player->getFee();
+        $USFFplayerFee = $player->getAnnualUSFFplayerFee();
+        $upLift = ((float)$fee + (float)$USFFplayerFee)* (0.030999 / 2); // splitting fee between player and league
+        $total = $upLift + (float)$fee + (float)$USFFplayerFee;
 /*        switch($fee)
         {
-            case '9.75':
-                $upLift = '0.29';
-                $total = '10.04';
-                break;           
-            
             case '28.00':
                 $upLift = '0.84';
                 $total = '28.84';
+                break;           
+            
+            case '38.00':
+                $upLift = '1.14';
+                $total = '39.14';
                 break;           
             
             default:
                 $upLift = '2.99';
                 $total = '102.99';
                 break;           
-        }
-*/        // Ok
-        $model['camper'] = $camper;
+            }
+ */
+        // Ok
+        $model['player']   = $player;
         $model['fee']    = $fee;
-        $model['upLift'] = $upLift;
-        $model['total']  = $total;
         $model['upLift'] = sprintf("%.02f",$upLift);
         $model['total']  = sprintf("%.02f",$total);
-
+        
         return $model;
     }
 }
