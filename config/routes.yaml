@@ -49,3 +49,17 @@ cerad_player_wanabe_list:
     defaults:
         _controller: App\Controller\PlayerWanabeListController::list
         _template: 'PlayerWanabe/List/PlayerListIndex.html.twig'
+
+cerad_team_register:
+    path:  /team/register/{id}
+    defaults:
+        id: 0
+        _controller: App\Controller\TeamRegisterController::register
+        _template: 'Team/Register/TeamRegisterIndex.html.twig'
+
+cerad_team_payment:
+    path:  /team/payment/{id}
+    defaults:
+        id: 0
+        _controller: App\Controller\TeamPaymentController::payment
+        _template: '/Team/Payment/TeamPaymentIndex.html.twig'

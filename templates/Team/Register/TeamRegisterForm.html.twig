@@ -1,0 +1,34 @@
+{# @CeradTeam/Team/Register/TeamRegisterForm.html.twig #}
+{{ form_start(form) }}
+{{ form_errors(form) }}
+<table border="1" style="width: 600px;">
+    
+<tr><th colspan="2">Team Information</th></tr>
+<tr><td style="width: 35%;">Team Age<span style='color:red'>*</span> & Gender <span style='color:red'>*</span></td>
+    <td style="width: 65%;">{{ form_widget(form.team.teamAge)   }} {{ form_widget(form.team.teamGender)}}</td></tr>
+<tr><td>Team Name <span style='color:red'>*</span></td><td>{{ form_widget(form.team.teamName)  }}</td></tr>
+<tr><td>Jersey Color</td><td>{{ form_widget(form.team.teamColor) }}</td></tr>
+
+<tr><th colspan="2">Point of Contact</th></tr>
+<tr><td>First Name<span style='color:red'>*</span> & Last Name <span style='color:red'>*</span></td><td>{{ form_widget(form.team.nameFirst) }}{{ form_widget(form.team.nameLast) }}</td></tr>
+<tr><td>Birth Date  </td><td>{{ form_widget(form.team.dob)       }}</td></tr>
+<tr><td>Gender      </td><td>{{ form_widget(form.team.gender)    }}</td></tr>
+
+<tr><th colspan="2">Email and Phones</th></tr>
+<tr><td>Email <span style='color:red'>*</span></td><td>{{ form_widget(form.team.email.email1) }}</td></tr>
+<tr><td>Email(confirm) <span style='color:red'>*</span></td><td>{{ form_widget(form.team.email.email2) }}</td></tr>
+<tr><td>Home Phone <span style='color:red'>*</span></td><td>{{ form_widget(form.team.phoneHome)    }}</td></tr>
+<tr><td>Cell Phone, Work Phone</td><td>{{ form_widget(form.team.phoneCell) }}{{ form_widget(form.team.phoneWork) }}</td></tr>
+
+<tr><th colspan="2">Address</th></tr>
+<tr><td>Street <span style='color:red'>*</span></td><td>{{ form_widget(form.team.street)  }}</td></tr>
+<tr><td>City<span style='color:red'>*</span>, State<span style='color:red'>*</span> & Zip Code <span style='color:red'>*</span></td><td>{{ form_widget(form.team.city) }}{{ form_widget(form.team.state) }}{{ form_widget(form.team.zipCode) }}</td></tr>
+
+<tr><th colspan="2">Where did you learn about North Alabama FUTSAL?</th></tr>
+<tr><td>Ex: Facebook</td><td>{{ form_widget(form.team.learn) }}</td></tr>
+
+<tr><td><span style='color:red'>*</span> Required Fields</td><td align="center">{{ form_widget(form.register) }}</td></tr>
+
+{{ form_rest(form)  }}
+</table>
+{{ form_end(form)   }}

@@ -13,7 +13,10 @@ class TeamRepository extends ServiceEntityRepository
         parent::__construct($registry,Team::class);
 
     }
-
+    public function createTeam()
+    {
+        return new Team();
+    }
 
     /* ==========================================================
      * Persistence
