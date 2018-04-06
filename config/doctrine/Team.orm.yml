@@ -1,8 +1,7 @@
-Cerad\Bundle\TeamBundle\Entity\Team:
+App\Entity\Team:
     type:  entity
     table: teams
-    repositoryClass: Cerad\Bundle\TeamBundle\Entity\TeamRepository
-    changeTrackingPolicy: NOTIFY
+    repositoryClass: App\Repository\TeamRepository
 
     id:
         id:

@@ -1,7 +1,7 @@
-Cerad\Bundle\PlayerBundle\Entity\Player:
+App\Entity\Camper:
     type:  entity
-    table: players_onthehouse
-    repositoryClass: Cerad\Bundle\PlayerBundle\Entity\PlayerRepository
+    table: campers
+    repositoryClass: App\Repository\CamperRepository
 
     id:
         id:
@@ -16,21 +16,27 @@ Cerad\Bundle\PlayerBundle\Entity\Player:
             length:   80
             nullable: false
 
-        # Player
-        nameFirstPlayer:
-            column:   name_first_player
+        # Futsal Camp Date
+        campDate:
+            column:   camp_date
+            type:     date
+            nullable: true
+
+        # CAMPER
+        nameFirstCamper:
+            column:   name_first_camper
             type:     string
             length:   80
             nullable: false
             
-        initialPlayer:
-            column:   initial_player
+        initialCamper:
+            column:   initial_camper
             type:     string
             length:   3
             nullable: true
             
-        nameLastPlayer:
-            column:   name_last_player
+        nameLastCamper:
+            column:   name_last_camper
             type:     string
             length:   80
             nullable: false
@@ -72,8 +78,8 @@ Cerad\Bundle\PlayerBundle\Entity\Player:
             nullable: false
                         
         # PHONE NUMBERS
-        phonePlayer:
-            column:   phone_player
+        phoneCamper:
+            column:   phone_camper
             type:     string
             length:   20
             nullable: false
@@ -96,51 +102,41 @@ Cerad\Bundle\PlayerBundle\Entity\Player:
             length:   20
             nullable: false
 
-        jerseyNumber:
-            column:   jersey_number
-            type:     integer
-            nullable: true
-            # The above field once was required for youth players
-
         # EXPERIENCE
         indoorExperience:
             column:   indoor_experience
             type:     string
             length:   10
             nullable: true
-            # The above field is required for youth players only
+            # The above field is required for youth campers only
             
         outdoorExperience:
             column:   outdoor_experience
             type:     string
             length:   10
             nullable: true
-            # The above field is required for youth players only
-            
+            # The above field is required for youth campers only
+       
+        #MOVE THIS UP ???????????
+        jerseyNumber:
+            column:   jersey_number
+            type:     integer
+            nullable: true
+            # The above field once was required for youth campers
+
         # PLAYER'S SHIRT SIZE
         shirtSize:
             column:   shirt_size
             type:     string
             length:   40
             nullable: true
-
-        # PLAYER'S EMAIL ADDRESS
+        
+        # CAMPER'S EMAIL ADDRESS
         emailAddress:
             column:   email_address
             type:     string
             length:   80
             nullable: true
-
-        paidAnnualUSFFplayerFee:
-            column:   paid_annual_usff_player_fee
-            type:     boolean
-            nullable: false
-
-        annualUSFFplayerFee:
-            column:   annual_usff_player_fee
-            type:     string
-            length:   20
-            nullable: false
 
         # PARENT OR GUARDIAN
         nameFirstParent:
@@ -148,21 +144,21 @@ Cerad\Bundle\PlayerBundle\Entity\Player:
             type:     string
             length:   80
             nullable: true
-            # The above field is required for youth players only
+            # The above field is required for youth campers only
             
         nameLastParent:
             column:   name_last_parent
             type:     string
             length:   80
             nullable: true
-            # The above field is required for youth players only
+            # The above field is required for youth campers only
             
         relationship:
             column:   relationship
             type:     string
             length:   80
             nullable: true
-            # The above field is required for youth players only
+            # The above field is required for youth campers only
 
         # MEDICAL
         medicalConditions:

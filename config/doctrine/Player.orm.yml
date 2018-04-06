@@ -1,7 +1,7 @@
-Cerad\Bundle\PlayerWanabeBundle\Entity\Player:
+App\Entity\Player:
     type:  entity
-    table: player_wanabes
-    repositoryClass: Cerad\Bundle\PlayerWanabeBundle\Entity\PlayerRepository
+    table: players_onthehouse
+    repositoryClass: App\Repository\PlayerRepository
 
     id:
         id:
@@ -10,13 +10,6 @@ Cerad\Bundle\PlayerWanabeBundle\Entity\Player:
     
     fields:
        
-        # season
-        seasonDesired:
-            column:   season_desired
-            type:     string
-            length:   80
-            nullable: false
-            
         project:
             column:   project
             type:     string
@@ -51,32 +44,32 @@ Cerad\Bundle\PlayerWanabeBundle\Entity\Player:
         dob:
             column:   dob
             type:     date
-            nullable: true
+            nullable: false
 
         # ADDRESS
         street:
             column:   street
             type:     string
             length:   80
-            nullable: true
+            nullable: false
                         
         city:
             column:   city
             type:     string
             length:   80
-            nullable: true
+            nullable: false
                         
         state:
             column:   state
             type:     string
             length:   20
-            nullable: true
+            nullable: false
                         
         zipCode:
             column:   zip_code
             type:     string
             length:   20
-            nullable: true
+            nullable: false
                         
         # PHONE NUMBERS
         phonePlayer:
@@ -101,7 +94,13 @@ Cerad\Bundle\PlayerWanabeBundle\Entity\Player:
             column:   phone_emergency_contact
             type:     string
             length:   20
+            nullable: false
+
+        jerseyNumber:
+            column:   jersey_number
+            type:     integer
             nullable: true
+            # The above field once was required for youth players
 
         # EXPERIENCE
         indoorExperience:
@@ -117,26 +116,30 @@ Cerad\Bundle\PlayerWanabeBundle\Entity\Player:
             length:   10
             nullable: true
             # The above field is required for youth players only
-        
-        #MORE THIS UP ??????????????
-        jerseyNumber:
-            column:   jersey_number
-            type:     integer
-            nullable: true
-            # The above field once was required for youth players
-
+            
         # PLAYER'S SHIRT SIZE
         shirtSize:
             column:   shirt_size
             type:     string
             length:   40
             nullable: true
-        
+
         # PLAYER'S EMAIL ADDRESS
         emailAddress:
             column:   email_address
             type:     string
             length:   80
+            nullable: true
+
+        paidAnnualUSFFplayerFee:
+            column:   paid_annual_usff_player_fee
+            type:     boolean
+            nullable: false
+
+        annualUSFFplayerFee:
+            column:   annual_usff_player_fee
+            type:     string
+            length:   20
             nullable: false
 
         # PARENT OR GUARDIAN
@@ -178,7 +181,7 @@ Cerad\Bundle\PlayerWanabeBundle\Entity\Player:
             column:   name_emergency_contact
             type:     string
             length:   80
-            nullable: true
+            nullable: false
 
         # VOLUNTEER
         volunteerism:
@@ -191,5 +194,17 @@ Cerad\Bundle\PlayerWanabeBundle\Entity\Player:
             type:     string
             length:   20
             nullable: false
-                        
+            
+        fee:
+            column:   fee
+            type:     string
+            length:   20
+            nullable: true
+            
+        feeStatus:
+            column:   fee_status
+            type:     string
+            length:   20
+            nullable: true
+            
             
