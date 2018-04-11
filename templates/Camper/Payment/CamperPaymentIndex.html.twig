@@ -9,7 +9,8 @@
  
 <h3 style="margin: 0px;">Step 2 - Confirm Information</h3>
 <table border="1">
-{% set campDate = camper.project|slice(14)|date("F d, Y") %}
+    {# set campDate = camper.project|slice(14)|date("F d, Y") #}
+    {% set campDate = 'Summer 2018' %}
 <tr><td>Camp Date</td><td>{{ campDate }}</td></tr>
 <tr><td>Camper Name</td><td>{{ camper.nameLastCamper }}, {{ camper.nameFirstCamper }} {{ camper.initialCamper }}</td></tr>
 <tr><td>Email</td><td>{{ camper.emailAddress }}</td></tr>
