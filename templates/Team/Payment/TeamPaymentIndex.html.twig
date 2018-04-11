@@ -15,7 +15,7 @@
 <tr><td colspan="2"></td></tr>
 {# <tr><td>Base Amount</td><td>{{ fee }}</td></tr>
 <tr><td>Debit/Credit Card Usage Fee</td><td>{{ upLift }}</td></tr>#}
-<tr><td>Total Amount*</td><td>{{ total }}</td></tr>
+<tr><td>Total Amount</td><td>{{ total }}</td></tr>
 <tr><td colspan="2"><a href="{{ path('cerad_team_register', { 'id': team.id }) }}">Change Team Information</a></td></tr>
 </table>
 {% set sandbox = false %}
@@ -47,12 +47,12 @@
     data-custom="My custom information"
     src="/js/paypal-button.min.js?merchant=KDTT4D89UN6DN"
 ></script>
-{%endif %}
+{%endif %}{#
 <p style="width: 400px; font-size: 80%">
 * NOTE: 
 The above Total Amount includes the debit/credit card usage fee. After you click  
 Buy Now and complete the payment, the debit/credit card usage fee of ${{ upLift }} <strong>is not refundable</strong>.
-</p>
+</p>#}
 <p style="width: 400px; font-size: 80%">
 ** NOTE:
 By clicking <strong>Buy Now</strong> you agree to the North Alabama <em>FUTSAL’s</em> 

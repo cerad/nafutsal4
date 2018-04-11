@@ -9,7 +9,7 @@ namespace App\Entity;
 class Team
 {
     protected $id;
-    protected $project = 'NAFUTSAL_Summer2017'; // For different events
+    protected $project = 'NAFUTSAL_Summer2018'; // For different events
     
     protected $teamName;
     protected $teamLevel;
@@ -125,11 +125,11 @@ class Team
                 break;              //All Tourney Fee = $300, Early Bird = $250
             
             case 'U17': case 'U18': case 'U19': case 'U16-19 (HS)':
-                $fee = '290.00';    //Season Deposit = $290, exactly= ($480 + $100) / 2   //Full Price was 550, but now 595 or 600
+                $fee = '295.00';    //Season Deposit = $290, exactly= ($480 + $100) / 2   //Full Price was 550, but now 595 or 600
                 break;              //All Tourney Fee = $350, Early Bird = $300
                  
             case 'Adult':           // 10-GAME Session: Season Deposit = $365, exactly= ($630 + $100) / 2  //Full Price was 688, but now 744 or 750
-                $fee = '290.00';    //  8-GAME Session: Season Deposit = $290, approx.= ($480 + $100) / 2  //Full Price was 550, but now 595 or 600
+                $fee = '295.00';    //  8-GAME Session: Season Deposit = $290, approx.= ($480 + $100) / 2  //Full Price was 550, but now 595 or 600
                 break;              //All Tourney Fee = $350, Early Bird = 300
              
             default: $fee = null;

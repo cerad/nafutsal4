@@ -36,7 +36,7 @@ class PlayerWanabeRegisterFormType extends AbstractType
         $builder->add('nameLastPlayer', TextType::class, array('required' => true));
         $builder->add('gender', GenderFormType::class, array('required' => true));
         $years = [];
-        for($year = 2006; $year > 1930; $year--) {$years[] = $year;}
+        for($year = 2009; $year > 1950; $year--) {$years[] = $year;}
         $builder->add('dob', BirthdayType::class, array('years' => $years, 'required' => false));
                 
         $builder->add('street', TextType::class, array('required' => false));

@@ -18,7 +18,7 @@
 <tr><td>Base Amount</td><td>{{ fee }}</td></tr>
 <tr><td>USFF Fee</td><td>{{ player.annualUSFFplayerFee }}</td></tr>
 {# <tr><td>Debit/Credit Card Usage Fee</td><td>{{ upLift }}</td></tr>#}
-<tr><td>Total Amount*</td><td>{{ total }}</td></tr>
+<tr><td>Total Amount</td><td>{{ total }}</td></tr>
 <tr><td colspan="2"><a href="{{ path('cerad_player_register', { 'id': player.id }) }}">Change Player Information</a></td></tr>
 </table>
 <br />
@@ -33,11 +33,12 @@
     data-return="http://www.nafutsal.org/index_files/Page22728.htm"
     src="/js/paypal-button.min.js?merchant=KDTT4D89UN6DN"
 ></script>
+    {#
 <p style="width: 400px; font-size: 80%">
 * NOTE: 
 The above Total Amount includes the debit/credit card usage fee. After you click  
 Buy Now and complete the payment, the debit/credit card usage fee of ${{ upLift }} <strong>is not refundable</strong>.
-</p>
+</p>#}
 <p style="width: 400px; font-size: 80%">
 ** NOTE:
 By clicking <strong>Buy Now</strong> you agree to the North Alabama <em>FUTSAL’s</em> 

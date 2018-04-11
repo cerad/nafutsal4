@@ -9,7 +9,7 @@ namespace App\Entity;
 class Player
 {
     protected $id;
-    protected $project = 'NAFUTSAL_Player_2017-18_winter_season'; // For different seasons (events)
+    protected $project = 'NAFUTSAL_Player_2018_summer_season'; // For different seasons (events)
 
     // Play Date
     protected $playDate;
@@ -61,7 +61,7 @@ class Player
     
     protected $status = 'Applied';
     
-    protected $fee = '55.00';
+    protected $fee = '57.00';
     protected $feeStatus;
         
     // =========================================================

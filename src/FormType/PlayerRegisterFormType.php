@@ -87,7 +87,10 @@ class PlayerRegisterFormType extends AbstractType
             'multiple' => false,
             'expanded' => false,
             'required' => true,
-            'choices' => array_flip(array('NAFUTSAL_Player_2017-18_winter_season' => 'Winter Season 2017/18'))
+            'choices' => array_flip(array(
+                'NAFUTSAL_Player_2018_summer_season'    => 'Summer Season 2018',
+                'NAFUTSAL_Player_2017-18_winter_season' => 'Winter Season 2017/18'
+            ))
         ));
     }
 }

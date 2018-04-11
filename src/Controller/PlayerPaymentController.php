@@ -40,7 +40,13 @@ class PlayerPaymentController extends AbstractController
         
         // Check if already paid
         $fee = $player->getFee();
-        $USFFplayerFee = $player->getAnnualUSFFplayerFee();
+
+        $USFFplayerFee = '0.00';
+        if ($player->getPaidAnnualUSFFplayerFee() == '0')
+        {
+            $USFFplayerFee = $player->getAnnualUSFFplayerFee();
+        }
+
         $upLift = ((float)$fee + (float)$USFFplayerFee)* (0.030999 / 2); // splitting fee between player and league
         $upLift = 0.0;
         $total = $upLift + (float)$fee + (float)$USFFplayerFee;
@@ -63,7 +69,7 @@ class PlayerPaymentController extends AbstractController
             }
  */
         // Ok
-        $model['player']   = $player;
+        $model['player'] = $player;
         $model['fee']    = $fee;
         $model['upLift'] = sprintf("%.02f",$upLift);
         $model['total']  = sprintf("%.02f",$total);
