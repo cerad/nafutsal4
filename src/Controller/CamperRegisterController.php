@@ -36,7 +36,7 @@ class CamperRegisterController extends AbstractController
         // And render
         $tplData = array();
         $tplData['form'] = $form->createView();
-        $template = $request->get('_template');dump($template);
+        $template = $request->get('_template');
         return $this->render($template,$tplData);   
     }
     private function createModel(Request $request)
