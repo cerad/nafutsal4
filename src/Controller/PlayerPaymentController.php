@@ -42,6 +42,7 @@ class PlayerPaymentController extends AbstractController
         $fee = $player->getFee();
         $USFFplayerFee = $player->getAnnualUSFFplayerFee();
         $upLift = ((float)$fee + (float)$USFFplayerFee)* (0.030999 / 2); // splitting fee between player and league
+        $upLift = 0.0;
         $total = $upLift + (float)$fee + (float)$USFFplayerFee;
 /*        switch($fee)
         {

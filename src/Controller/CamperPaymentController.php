@@ -41,7 +41,7 @@ class CamperPaymentController extends AbstractController
         
         // Check if already paid
         $fee = $camper->getFee();
-        $upLift = ((float)$fee * 0.030999);
+        $upLift = ((float)$fee * 0.030999); $upLift = 0.0;
         $total = $upLift + (float)$fee;
 /*        switch($fee)
         {

@@ -40,7 +40,7 @@ class TeamPaymentController extends AbstractController
         
         // Check if already paid
         $fee = $team->getFee();
-        $upLift = ((float)$fee * 0.030999); //divided by 2 to split upLift with team for tournament
+        $upLift = ((float)$fee * 0.030999); $upLift = 0.0;
         $total = $upLift + (float)$fee;
 /*        switch($fee)
         {

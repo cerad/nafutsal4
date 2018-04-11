@@ -15,8 +15,8 @@
 <tr><td>Camper Name</td><td>{{ camper.nameLastCamper }}, {{ camper.nameFirstCamper }} {{ camper.initialCamper }}</td></tr>
 <tr><td>Email</td><td>{{ camper.emailAddress }}</td></tr>
 <tr><td colspan="2"></td></tr>
-<tr><td>Base Amount</td><td>{{ fee }}</td></tr>
-<tr><td>Debit/Credit Card Usage Fee</td><td>{{ upLift }}</td></tr>
+{#<tr><td>Base Amount</td><td>{{ fee }}</td></tr>
+<tr><td>Debit/Credit Card Usage Fee</td><td>{{ upLift }}</td></tr>#}
 <tr><td>Total Amount*</td><td>{{ total }}</td></tr>
 <tr><td colspan="2"><a href="{{ path('cerad_camper_register', { 'id': camper.id }) }}">Change Camper Information</a></td></tr>
 </table>
