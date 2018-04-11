@@ -37,7 +37,8 @@ class CamperRegisterFormType extends AbstractType
         $builder->add('gender', GenderFormType::class);
 
         $years = [];
-        for($year = 2009; $year > 2001; $year--) {$years[] = $year;}
+        //r($year = 2009; $year > 2001; $year--) {$years[] = $year;}
+        for($year = 2003; $year > 1998; $year--) {$years[] = $year;}
         $builder->add('dob', BirthdayType::class, array('years' => $years));
                 
         $builder->add('street', TextType::class);
@@ -84,12 +85,15 @@ class CamperRegisterFormType extends AbstractType
             'label' => 'camp',
             'multiple' => false,
             'expanded' => false,
-            'choices' => array_flip(array('NAFUTSAL_Camp_2017-11-03' => 'November 3, 2017',
-                               'NAFUTSAL_Camp_2016-11-10' => 'November 10, 2016',
-                               'NAFUTSAL_Camp_2016-05-21' => 'May 21, 2016',
-                               'NAFUTSAL_Camp_2015-01-11' => 'January 11, 2015', 
-                               'NAFUTSAL_Camp_2014-11-07' => 'November 7, 2014',
-                               'NAFUTSAL_Camp_2014-07-01' => 'July 1, 2014'))
+            'choices' => array_flip(array(
+                'NAFUTSAL_Academy_2018_Summer' => 'June/July,2018',
+                'NAFUTSAL_Camp_2018-03-27' => 'March 27/29, 2018',
+                'NAFUTSAL_Camp_2017-11-03' => 'November 3, 2017',
+                'NAFUTSAL_Camp_2016-11-10' => 'November 10, 2016',
+                'NAFUTSAL_Camp_2016-05-21' => 'May 21, 2016',
+                'NAFUTSAL_Camp_2015-01-11' => 'January 11, 2015',
+                'NAFUTSAL_Camp_2014-11-07' => 'November 7, 2014',
+                'NAFUTSAL_Camp_2014-07-01' => 'July 1, 2014'))
         ));
     }
 }

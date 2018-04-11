@@ -9,7 +9,9 @@ namespace App\Entity;
 class Camper
 {
     protected $id;
-    protected $project = 'NAFUTSAL_Camp_2017-11-03'; // For different events
+
+    //protect $project = 'NAFUTSAL_Camp_2017-11-03'; // For different events
+    protected $project = 'NAFUTSAL_Academy_2018_Summer'; // For different events
 
     // Camp Date
     protected $campDate;
@@ -57,7 +59,8 @@ class Camper
 
     protected $status = 'Applied';
 
-    protected $fee = '9.75';
+    //otected $fee = '9.75';
+    protected $fee = '36.00';
     protected $feeStatus;
 
     // =========================================================
