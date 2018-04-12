@@ -161,7 +161,12 @@ class Player
             $this->setAnnualUSFFplayerFee ('20.00');  // 20 regardless, in the fall
         }
     }
-
+    // For PlayerPaymentIndex.html.twig
+    public function getOwedUSSFPlayerFee()
+    {
+        if ($this->getPaidAnnualUSFFplayerFee()) return 0.00;
+        return $this->getAnnualUSFFplayerFee();
+    }
     public function setAnnualUSFFplayerFee     ($value) { $this->annualUSFFplayerFee = $value; }
     
     public function setNameFirstParent ($value) { $this->nameFirstParent = $value; }
