@@ -27,11 +27,17 @@
 <tr><td>Email <span style='color:red'>*</span></td><td>{{ form_widget(form.player.emailAddress.email1) }}</td></tr>
 <tr><td>Email (confirm) <span style='color:red'>*</span></td><td>{{ form_widget(form.player.emailAddress.email2) }}</td></tr>
 
-{# comment #}
-{# <tr><td>Paid USFF Fee? </td><td>{{ form_widget(form.player.paidAnnualUSFFplayerFee) }} No - see note immediately below </td></tr> #}
-{# <tr><td colspan="2"><font size="2"><center>Check the box above ONLY if you have previously paid the Annual USFF Player Registration Fee for the current fiscal year (August 1 thru July 31), which is normally $21.00 per adult player. If you have not previously paid this fee, $10 will be added to your House Team Registration cost for this purpose (increases to $21 after Apr 30 or if not paid online). You MUST pay the USFF Player Registration Fee before you may play on the House Team.</center></font></td></tr> #}
-   <tr><td>Paid USFF Fee? </td><td>{{ form_widget(form.player.paidAnnualUSFFplayerFee) }} All must pay this fee annually. See note immediately below.</td></tr>
-   <tr><td colspan="2"><font size="2"><center>Checking this box is irrelevant in the fall. You MUST pay the USFF Player Registration Fee before you may play on the House Team in the upcoming winter season.</center></font></td></tr>
+    <tr>
+        <td>Paid USFF Fee previously? </td>
+        <td>{{ form_widget(form.player.paidAnnualUSFFplayerFee) }} <font size="2">
+                Box checked means "Yes". Box unchecked means "No".<br>
+                All must pay this fee annually. See note immediately below.</font>
+        </td>
+    </tr>
+    <tr><td colspan="2"><font size="2">
+                <center>Checking this box is irrelevant in the fall.
+                    You MUST pay the USFF Player Registration Fee before you may play on the House Team in the subsequent winter season.
+                </center></font></td></tr>
 
 <tr><th colspan="2">Parent/Guardian Information (youth players only)</th></tr>
 <tr><td>First Name </td><td>{{ form_widget(form.player.nameFirstParent) }}</td></tr>
