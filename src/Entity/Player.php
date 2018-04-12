@@ -43,7 +43,7 @@ class Player
     protected $emailAddress;
     
     // Flag indicating, at the time of signing up for the "house" team, whether or not registrant has paid the annual USFF player registration fee
-    protected $paidAnnualUSFFplayerFee;
+    protected $paidAnnualUSFFplayerFee = 0;
     protected $annualUSFFplayerFee = '20';
 
     // Parent or Guardian
@@ -144,20 +144,24 @@ class Player
     
     public function setEmailAddress ($value)  { $this->emailAddress = $value; }
 
-    public function setPaidAnnualUSFFplayerFee ($value) { $this->paidAnnualUSFFplayerFee = $value; // $value is a flag, 1 or 0, Yes or No to "Paid Annual USFF Player Fee?"
-                                                            //Also set the AMOUNT of the annual fee
-                                                            if ($value == 0) // 0 means player has NOT paid the annual fee
-                                                                {
-                                                                if ( time() < gmmktime(6,0,0,10,9,2017) ) // Oct 9, 2017 GMT, which is midnight CDT
-                                                                $this->setAnnualUSFFplayerFee ('10.00');
-                                                                else
-                                                                $this->setAnnualUSFFplayerFee ('20.00');
-                                                                }
-                                                            else // player HAS paid the annual fee and does not need to pay it again
-                                                                {
-                                                                $this->setAnnualUSFFplayerFee ('20.00');  // 20 regardless, in the fall
-                                                                }
+    public function setPaidAnnualUSFFplayerFee ($value)
+    {
+        $this->paidAnnualUSFFplayerFee = $value; // $value is a flag, 1 or 0, Yes or No to "Paid Annual USFF Player Fee?"
+
+        //Also set the AMOUNT of the annual fee
+        if ($value == 0) // 0 means player has NOT paid the annual fee
+        {
+            if ( time() < gmmktime(6,0,0,10,9,2017) ) // Oct 9, 2017 GMT, which is midnight CDT
+                $this->setAnnualUSFFplayerFee ('10.00');
+            else
+                $this->setAnnualUSFFplayerFee ('20.00');
+        }
+        else // player HAS paid the annual fee and does not need to pay it again
+        {
+            $this->setAnnualUSFFplayerFee ('20.00');  // 20 regardless, in the fall
+        }
     }
+
     public function setAnnualUSFFplayerFee     ($value) { $this->annualUSFFplayerFee = $value; }
     
     public function setNameFirstParent ($value) { $this->nameFirstParent = $value; }

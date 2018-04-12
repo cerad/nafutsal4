@@ -18,7 +18,7 @@ class AgeFormType extends AbstractType
     {
         $resolver->setDefaults(array(
             'label'    => 'Age',
-            'choices'  => $this->choices,
+            'choices'  => array_flip($this->choices),
             'multiple' => false,
             'expanded' => false,
         ));

@@ -42,7 +42,7 @@ class PlayerPaymentController extends AbstractController
         $fee = $player->getFee();
 
         $USFFplayerFee = '0.00';
-        if ($player->getPaidAnnualUSFFplayerFee() == '0')
+        if ($player->getPaidAnnualUSFFplayerFee() == 0)
         {
             $USFFplayerFee = $player->getAnnualUSFFplayerFee();
         }

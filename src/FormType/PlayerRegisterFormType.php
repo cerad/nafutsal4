@@ -79,7 +79,7 @@ class PlayerRegisterFormType extends AbstractType
         
         $builder->add('medicalConditions', TextType::class,    array('required' => false, 'attr' => array('size' => 50)));
         $builder->add('nameDoctor', TextType::class,           array('required' => false));
-        $builder->add('nameEmergencyContact', TextType::class, array('required' => false));
+        $builder->add('nameEmergencyContact', TextType::class, array('required' => true));
         
         $builder->add('volunteerism',TextType::class, array('required' => false, 'attr' => array('size' => 50)));
         $builder->add('project',ChoiceType::class,array(
