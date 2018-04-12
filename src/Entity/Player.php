@@ -43,7 +43,7 @@ class Player
     protected $emailAddress;
     
     // Flag indicating, at the time of signing up for the "house" team, whether or not registrant has paid the annual USFF player registration fee
-    protected $paidAnnualUSFFplayerFee = 0;
+    protected $paidAnnualUSFFplayerFee;
     protected $annualUSFFplayerFee = '20';
 
     // Parent or Guardian
