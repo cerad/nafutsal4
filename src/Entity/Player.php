@@ -44,7 +44,7 @@ class Player
     
     // Flag indicating, at the time of signing up for the "house" team, whether or not registrant has paid the annual USFF player registration fee
     protected $paidAnnualUSFFplayerFee;
-    protected $annualUSFFplayerFee = '20';
+    protected $annualUSFFplayerFee = '10'; // '20';
 
     // Parent or Guardian
     protected $nameFirstParent;
@@ -154,11 +154,12 @@ class Player
             if ( time() < gmmktime(6,0,0,10,9,2017) ) // Oct 9, 2017 GMT, which is midnight CDT
                 $this->setAnnualUSFFplayerFee ('10.00');
             else
-                $this->setAnnualUSFFplayerFee ('20.00');
+                $this->setAnnualUSFFplayerFee ('10.00'); // was 20
         }
         else // player HAS paid the annual fee and does not need to pay it again
         {
-            $this->setAnnualUSFFplayerFee ('20.00');  // 20 regardless, in the fall
+            //$this->setAnnualUSFFplayerFee ('20.00');  // 20 regardless, in the fall
+            $this->setAnnualUSFFplayerFee ('10.00');  // 20 regardless, in the fall
         }
     }
     // For PlayerPaymentIndex.html.twig
