@@ -61,7 +61,7 @@ class Player
     
     protected $status = 'Applied';
     
-    protected $fee = '57.00';
+    protected $fee = '64.00';
     protected $feeStatus;
         
     // =========================================================
